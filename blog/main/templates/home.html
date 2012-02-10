@@ -10,6 +10,7 @@
     {% for article in articles %}
     <div>
         <h3>{{ article.title }} - {{ article.created_at }} - ({{ article.comments.count }}) comentarios</h3>
+        <a href="{% url show_article article.id %}">ver mas</a>
         <div>{{ article.body }}</div>
         <div class="comments">
             {% for comment in article.comments.all %}

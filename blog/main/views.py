@@ -7,3 +7,10 @@ def home(request):
     return render_to_response('home.html', {
         'articles': articles,
     })
+
+
+def show_article(request, pk):
+    article = Article.objects.get(pk=pk)
+    return render_to_response('show_article.html', {
+        'article': article,
+    })
