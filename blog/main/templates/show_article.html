@@ -4,7 +4,14 @@
 </head>
 <body>
     <a href="{% url home %}" >regresar</a>
-    <h1>{{ article.title }}</h1>
+    <h1>{{ article.title }}--{{ article.comments.count }} </h1>
     <p>{{ article.body }}</p>
+    <p>
+    {% for comment in article.comments.all %}
+        <div>
+            {{ comment.text }}
+        </div>
+    {% endfor %}
+    </p>
 </body>
 </html>
